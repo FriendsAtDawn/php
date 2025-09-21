@@ -3,8 +3,15 @@
 $jsonUrl = 'https://mundo.xo.je/json/dir.json';
 
 // Leer JSON desde URL
-$jsonContent = file_get_contents($jsonUrl);
-$fileNames = json_decode($jsonContent);
+$jsonContent = @file_get_contents($jsonUrl);
+if ($jsonContent === false) {
+    die("Error: Could not retrieve JSON from $jsonUrl.\n");
+}
+
+$fileNames = json_decode($jsonContent, true); // decode as associative array
+if (!is_array($fileNames)) {
+    die("Error: Invalid JSON structure.\n");
+}
 
 $html = "<!DOCTYPE html><html><head><title>Listado PDF</title></head><body>\n";
 
