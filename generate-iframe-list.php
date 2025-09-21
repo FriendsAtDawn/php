@@ -2,7 +2,7 @@
 $base_url = 'https://repositorio.hstn.me/';
 $file_names = ['98678.pdf','77878.pdf', '76778.pdf', '45789.pdf', '40571.pdf', '101234.pdf']; // Puedes agregar o generar esta lista
 
-$html = "<!DOCTYPE html><html><head><title>Listado PDF</title></head><body>\n";
+$html = "<!DOCTYPE html><html><head><title>Listado PDF</title><link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"></head><body>\n";
 foreach ($file_names as $file) {
     $url = $base_url . $file;
     $html .= "<h3>$file</h3>";
