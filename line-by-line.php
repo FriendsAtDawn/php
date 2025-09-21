@@ -26,7 +26,7 @@ while (($linea = fgets($handle)) !== false) {
 
     // Escribir cada entrada en HTML
     fwrite($html_file, "<iframe src=\"$url_pdf\" id=\"$linea\" width=\"600\" height=\"400\"></iframe>\n<br><br>\n");
-    fwrite($html_file, "<a href=\"$url_pdf\" download=\"$linea\"><h5>$linea</h5></a>\n");
+    fwrite($html_file, "<a href=\"$url_pdf\" download><h5>$linea</h5></a>\n");
 }
 
 // Cerrar etiquetas HTML y archivos
