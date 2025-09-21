@@ -16,7 +16,7 @@ if (!$html_file) {
 }
 
 // Escribir estructura inicial HTML
-fwrite($html_file, "<!DOCTYPE html>\n<html>\n<head><title>Lista de PDFs</title></head>\n<body>\n");
+fwrite($html_file, "<!DOCTYPE html>\n<html>\n<head><title>Lista de PDFs</title><link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\"></head>\n<body>\n");
 
 while (($linea = fgets($handle)) !== false) {
     $linea = trim($linea);
@@ -25,8 +25,8 @@ while (($linea = fgets($handle)) !== false) {
     $url_pdf = "https://mundo.xo.je/$linea"; // Cambia al dominio real y ruta
 
     // Escribir cada entrada en HTML
-    fwrite($html_file, "<h3>$linea</h3>\n");
-    fwrite($html_file, "<iframe src=\"$url_pdf\" width=\"600\" height=\"400\"></iframe>\n<br><br>\n");
+    fwrite($html_file, "<iframe src=\"$url_pdf\" id=\"$linea\" width=\"600\" height=\"400\"></iframe>\n<br><br>\n");
+    fwrite($html_file, "<h2>$linea</h2>\n");
 }
 
 // Cerrar etiquetas HTML y archivos
