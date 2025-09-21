@@ -27,7 +27,7 @@ jobs:
           php-version: '8.1'
 
       - name: Run PHP script to generate iframe list
-        run: php list-from-json.php
+        run: php line-by-line.php
 
       - name: Prepare public folder for GitHub Pages
         run: |
