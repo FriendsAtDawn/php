@@ -4,7 +4,7 @@ $jsonUrl = 'https://mundo.xo.je/json/dir.json';
 
 // Leer JSON desde URL
 $jsonContent = file_get_contents($jsonUrl);
-$fileNames = json_decode($jsonContent, true);
+$fileNames = json_decode($jsonContent);
 
 $html = "<!DOCTYPE html><html><head><title>Listado PDF</title></head><body>\n";
 
