@@ -6,7 +6,7 @@ $html = "<!DOCTYPE html><html><head><title>Listado PDF</title><br /><link rel=\"
 foreach ($file_names as $file) {
     $url = $base_url . $file;
     $html .= "<h3>$file</h3>";
-    $html .= "<iframe src=\"$url\" width=\"600\" height=\"400\"></iframe><br><br>\n";
+    $html .= "<iframe src=\"$url\" id=\"$file\" width=\"600\" height=\"400\"></iframe><br><br>\n";
 }
 $html .= "</body></html>";
 
