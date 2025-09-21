@@ -1,5 +1,5 @@
 <?php
-$archivo_lista = 'dir.txt'; // Archivo dentro del repo con la lista
+$archivo_lista = 'dix.txt'; // Archivo dentro del repo con la lista
 
 // Abrir el archivo para lectura
 $handle = fopen($archivo_lista, 'r');
