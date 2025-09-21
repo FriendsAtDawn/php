@@ -9,7 +9,7 @@ $fileNames = json_decode($jsonContent, true);
 $html = "<!DOCTYPE html><html><head><title>Listado PDF</title></head><body>\n";
 
 foreach ($fileNames as $file) {
-    $url = 'https://mundo.xo.je/json/' . $file;
+    $url = 'https://mundo.xo.je/json' . $file;
     $html .= "<h3>$file</h3>";
     $html .= "<iframe src=\"$url\" width=\"600\" height=\"400\"></iframe><br><br>\n";
 }
