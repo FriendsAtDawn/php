@@ -1,6 +1,6 @@
 <?php
 // URL del JSON con la lista
-$jsonUrl = 'https://dominioremoto/dir.json';
+$jsonUrl = 'https://mundo.xo.je/json/dir.json';
 
 // Leer JSON desde URL
 $jsonContent = file_get_contents($jsonUrl);
