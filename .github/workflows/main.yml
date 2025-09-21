@@ -14,9 +14,11 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up PHP
@@ -27,19 +29,15 @@ jobs:
       - name: Run PHP script to generate iframe list
         run: php generate-iframe-list.php
 
-      - name: Run PHP script to generate iframe list
-        run: php generate-iframe-list.php
-
-      - name: Preparar archivos para GitHub Pages
-  run: |
-    mkdir -p public
-    cp index.html public/
+      - name: Prepare files for GitHub Pages
+        run: |
+          mkdir -p public
+          cp index.html public/
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v
-  with:
-        path: 'public'
-        
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-
