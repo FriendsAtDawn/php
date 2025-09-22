@@ -16,7 +16,7 @@ if (!$html_file) {
 }
 
 // Escribir estructura inicial HTML
-fwrite($html_file, "<!DOCTYPE html>\n<html>\n<head><title>Lista de PDFs</title><link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\"></head>\n<body>\n");
+fwrite($html_file, "<!DOCTYPE html>\n<html>\n<head><title>Lista de PDFs</title><link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\"></head>\n<body>\n")\n<img src=\"https://villalba.is.eu.org/img/logo.svg\">;
 
 while (($linea = fgets($handle)) !== false) {
     $linea = trim($linea);
@@ -26,7 +26,7 @@ while (($linea = fgets($handle)) !== false) {
 
     // Escribir cada entrada en HTML
     fwrite($html_file, "<iframe src=\"$url_pdf\" id=\"$linea\" width=\"600\" height=\"400\"></iframe>\n<br><br>\n");
-    fwrite($html_file, "<a href=\"$url_pdf\" download><h5>$linea</h5></a>\n");
+    fwrite($html_file, "<a href=\"$url_pdf\" download><p>$linea</p></a>\n");
 }
 
 // Cerrar etiquetas HTML y archivos
